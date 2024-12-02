@@ -110,7 +110,7 @@ def main(args):
                 # in the comparison section
                 idx = -1
                 for sn in ('impression', 'findings',
-                           'last_paragraph', 'comparison'):
+                           'last_paragraph', 'comparison', 'indication'):
                     if sn in section_names:
                         idx = list_rindex(section_names, sn)
                         break
@@ -125,7 +125,7 @@ def main(args):
 
                 study_sectioned = [s_stem]
                 for sn in ('impression', 'findings',
-                           'last_paragraph', 'comparison'):
+                           'last_paragraph', 'comparison', 'indication'):
                     if sn in section_names:
                         idx = list_rindex(section_names, sn)
                         study_sectioned.append(sections[idx].strip())
@@ -139,7 +139,7 @@ def main(args):
             csvwriter = csv.writer(fp)
             # write header
             csvwriter.writerow(['study', 'impression', 'findings',
-                                'last_paragraph', 'comparison'])
+                                'last_paragraph', 'comparison', 'indication'])
             for row in study_sections:
                 csvwriter.writerow(row)
 
